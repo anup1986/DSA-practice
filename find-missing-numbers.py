@@ -32,15 +32,14 @@ def find_missing_range_numbers(a, l, u):
                 l_val = val
                 u_val = a[pos+1]
                 if u_val <= 99 and l_val >= 0:
-                    if (u_val - l_val) == 1:
-                        pass
-                    else:
-                        if (u_val - l_val) == 1:
-                            result.append(f"{u_val-l_val}")
+                    if (u_val - l_val) > 1:
+                        x = u_val - 1
+                        y = l_val + 1
+                        if x == y:
+                            st = f"{x}"
                         else:
-                            x = u_val - 1
-                            y = l_val + 1
-                            result.append(f"{y}->{x}")
+                            st = f"{y}->{x}"
+                        result.append(st)
     return result
 
 
